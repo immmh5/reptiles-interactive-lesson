@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الزواحف — كيف عاشت على اليابسة؟ | الدرس التفاعلي</title>
+<style>
+  :root{
+    --bg:#f4f1e8; --card:#ffffff; --ink:#1f2a23; --muted:#5c6b5f;
+    --green:#2e6b3e; --green2:#1e4a2b; --amber:#e8a33d; --amber2:#c9821e;
+    --red:#b3352b; --line:#e2ddcf; --soft:#eef6ee;
+    --shadow:0 6px 18px rgba(30,60,40,.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI", Tahoma, Arial, "Noto Naskh Arabic", sans-serif; background:var(--bg); color:var(--ink); line-height:1.8;}
+  .wrap{max-width:1400px; margin:0 auto; padding:0 18px;}
+
+  header.hero{background:linear-gradient(135deg,#14351f, #2e6b3e 60%, #4a8a54); color:#fff; padding:34px 16px 28px; text-align:center;}
+  .hero h1{font-size:1.9rem; margin-bottom:6px; letter-spacing:.5px;}
+  .hero .sub{font-size:1.15rem; opacity:.95; margin-bottom:4px;}
+  .hero .q{font-family:Georgia, "Times New Roman", serif; opacity:.85; font-size:.95rem;}
+  .badge{display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35); padding:3px 14px; border-radius:999px; font-size:.85rem; margin-top:8px;}
+
+  nav.steps{position:sticky; top:0; background:var(--green2); z-index:5; box-shadow:0 4px 10px rgba(0,0,0,.25);}
+  nav.steps .inner{display:flex; flex-wrap:wrap; gap:6px; padding:10px 16px; justify-content:center;}
+  nav.steps a{color:#eaf5ec; text-decoration:none; font-size:.9rem; padding:5px 12px; border-radius:999px; transition:background .2s;}
+  nav.steps a:hover{background:rgba(255,255,255,.2);}
+
+  section.card{background:var(--card); border-radius:18px; box-shadow:var(--shadow); margin:30px 0; overflow:hidden; border-top:6px solid var(--green);}
+  .sec-head{padding:18px 22px 14px;}
+  .num{display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background:var(--green); color:#fff; font-weight:700; margin-left:10px; vertical-align:middle;}
+  .sec-head h2{display:inline; font-size:1.45rem; color:var(--green2);}
+  .sec-head p{color:var(--muted); margin-top:4px; font-size:.98rem;}
+  .sec-body{padding:6px 22px 22px;}
+
+  h3.block{color:var(--green2); margin:18px 0 8px; font-size:1.12rem;}
+  .grid2{display:grid; grid-template-columns:1fr; gap:16px; margin:14px 0;}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:12px 0;}
+  @media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr;}}
+  .fact{background:var(--soft); border-radius:12px; padding:12px 14px; border:1px solid #d7e8d9;}
+  .fact b{color:var(--green2); display:block; margin-bottom:2px; font-size:.95rem;}
+  .fact span{font-size:.92rem; color:#33443a;}
+
+  table{border-collapse:collapse; width:100%; margin:12px 0; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.06);}
+  th,td{border:1px solid var(--line); padding:10px 12px; text-align:center; font-size:.96rem;}
+  th{background:var(--green2); color:#fff; font-weight:700;}
+  tr:nth-child(even) td{background:#f8faf6;}
+  td.u{background:#fff7e9; font-weight:600; color:var(--amber2);}
+
+  .vid{background:#141210; border-radius:14px; overflow:hidden; margin:16px 0; border:1px solid #2a2622; box-shadow:0 6px 16px rgba(30,40,30,.18);}
+  video{width:100%; max-height:560px; display:block; border:none;}
+  .vid-label{background:linear-gradient(135deg,#241f1a,#352a1e); color:#f0e6d6; font-size:.94rem; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;}
+  .vid-label b{color:#ffd479; font-size:1rem;}
+  .vid-label span{opacity:.85; font-size:.82rem; white-space:nowrap;}
+  .vdesc{background:#fff; color:#33443a; font-size:.95rem; padding:12px 16px; border-top:1px solid #e8e2d5; line-height:1.7;}
+  .vdesc b{color:var(--green2);}
+
+  .model-row{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0;}
+  a.model{display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#f8f8f8,#e9f2ea); border:1px solid #cfe0d2; color:var(--green2); text-decoration:none; padding:8px 14px; border-radius:999px; font-weight:600; font-size:.9rem; box-shadow:0 2px 5px rgba(0,0,0,.06); transition:.15s;}
+  a.model:hover{transform:translateY(-2px); box-shadow:var(--shadow); background:#e4f2e6;}
+  a.model::before{content:"◈"; color:var(--amber2);}
+  .model-item{width:100%; margin:10px 0;}
+  .model-item iframe{width:100%; height:400px; border:none; border-radius:12px; background:#0b0d13; box-shadow:0 3px 10px rgba(20,40,30,.18); display:block;}
+  @media(max-width:720px){.model-item iframe{height:300px;}}
+
+  details.answer{background:#fff8ec; border:1px solid #ecd9ae; border-radius:10px; padding:10px 14px; margin:8px 0;}
+  details.answer summary{font-weight:700; color:var(--amber2); cursor:pointer;}
+  details.answer .inner{margin-top:6px; color:#453a24;}
+  details.answer ul{margin:0 18px 0 0;}
+
+  a.ref{color:var(--green); font-weight:600; text-decoration:none; border-bottom:1px dotted var(--green);}
+  a.ref:hover{color:var(--amber2); border-color:var(--amber2);}
+
+  footer{text-align:center; color:var(--muted); padding:22px 16px 30px; font-size:.85rem;}
+  .flow{background:var(--green2); color:#eaf5ec; border-radius:14px; padding:14px 18px; margin:16px 0; font-size:1rem;}
+  .flow b{color:#ffd479;}
+  .warn{background:#fdf1e6; border:1px solid #f2d7a8; border-radius:10px; padding:10px 14px; color:#7a4d12; font-size:.95rem; margin-top:8px;}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="hero">
+  <h1>الزواحف 🦎</h1>
+  <div class="sub">الدرس 1-3 • كيف عاشت على اليابسة وغيرها ما قدر؟</div>
+  <div class="q">"تخيّل أناكوندا ضخمة مثل الكرتون.. هل هذا هو الواقع؟ خلّنا نكتشف"</div>
+  <span class="badge">نمط في تحضيرك: شرح + فيديو + مجسم لكل فكرة</span>
+</header>
+
+<!-- ============ NAV ============ -->
+<nav class="steps">
+  <div class="inner">
+    <a href="#s1">1. المشكلة</a>
+    <a href="#s2">2. البيضة</a>
+    <a href="#s3">3. الجسم</a>
+    <a href="#s4">4. الرتب</a>
+    <a href="#s5">5. البيئة</a>
+    <a href="#s6">6. المراجعة</a>
+    <a href="#s7">7. مختبر 3D</a>
+    <a href="#ref">8. المرجع</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ FLOW MAP ============ -->
+<div class="flow">
+  <b>خريطة الدرس (اتبع الترتيب):</b>
+  المشكلة (الجفاف) ← الحل (البيضة الأمنيونية + جسم مصمّم لليابسة) ← التصنيف (الرتب الأربع) ← البيئة (الديناصورات والأخطار).
+  <span style="opacity:.85"> — كل قسم: فكرة قصيرة ← فيديو ← مجسم ثلاثي الأبعاد.</span>
+</div>
+
+<!-- ============ SECTION 1 ============ -->
+<section class="card" id="s1">
+  <div class="sec-head"><span class="num">1</span><h2>المشكلة: الجفاف</h2>
+  <p>البرمائيات ما تقدر تعيش على اليابسة بشكل دائم.. والزواحف حلّت المشكلة.</p></div>
+  <div class="sec-body">
+    <table>
+      <tr><th>البرمائيات (مشكلتها)</th><th>الزواحف (الحل)</th></tr>
+      <tr><td>جلد معرّض للجفاف</td><td class="u">جلد حرشفي سميك</td></tr>
+      <tr><td>بيوض بلا قشرة</td><td class="u">بيضة بقشرة جلدية</td></tr>
+      <tr><td>يرقات تتنفس بالخياشيم</td><td class="u">رئات أكثر فاعلية</td></tr>
+    </table>
+
+    <h3 class="block">🎬 شاهد أولًا: المقارنة بالصور</h3>
+    <div class="vid">
+      <div class="vid-label"><b>🎬 الفرق بين الزواحف والبرمائيات</b><span>شرح تمهيدي</span></div>
+      <video controls preload="metadata" src="1- التمهيد والمقارنة/الفرق بين الزواحف والبرمائيات.mp4"></video>
+      <div class="vdesc"><b>👀 شاهد ثم اسأل:</b> ليش الزاحف ما يخاف من الجفاف؟ — جلد حرشفي سميك يمنع فقد الماء، وبيضة بقشرة جلدية تحمي الجنين، ورئات أكثر فاعلية من خياشيم البرمائيات.</div>
+    </div>
+
+    <h3 class="block">🧊 مجسمات نقارن بها (افتح وخلّ الطلاب يشوفون الجلد)</h3>
+    <div class="model-row">
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/lacerta-agilis-6b11e9d2a4124f1c8ff5b18770cf5d57/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="سحلية الرمل" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/lacerta-agilis-6b11e9d2a4124f1c8ff5b18770cf5d57" target="_blank">سحلية الرمل ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/coronella-austriaca-88e9389440114aa093a5a8e5dd367eeb/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="الأفعى الملساء" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/coronella-austriaca-88e9389440114aa093a5a8e5dd367eeb" target="_blank">الأفعى الملساء ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/natrix-astreptophora-49c6ee6779a4409085f00d3ae453bcba/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="أفعى الماء" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/natrix-astreptophora-49c6ee6779a4409085f00d3ae453bcba" target="_blank">أفعى الماء ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/model-12-tokay-gecko-8f19aac5694b40c3a0a53bf107fd30a4/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="وزغ التوكاي" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/model-12-tokay-gecko-8f19aac5694b40c3a0a53bf107fd30a4" target="_blank">وزغ التوكاي ⤴</a>
+    </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 ============ -->
+<section class="card" id="s2">
+  <div class="sec-head"><span class="num">2</span><h2>البيضة الأمنيونية: بيت الجنين</h2>
+  <p>بيضة بقشرة جلدية تحمي السوائل من الجفاف — داخلها أغشية، كل واحد له وظيفة.</p></div>
+  <div class="sec-body">
+    <table>
+      <tr><th>الجزء</th><th>وظيفته</th></tr>
+      <tr><td>القشرة الجلدية</td><td>تحمي السوائل من الجفاف</td></tr>
+      <tr><td>الغشاء الرهلي (الأمنيون)</td><td>سائل يحيط بالجنين ويحميه</td></tr>
+      <tr><td>كيس المحّ</td><td>غذاء الجنين</td></tr>
+      <tr><td>كيس الممبار (الألانتويس)</td><td>يجمع الفضلات</td></tr>
+      <tr><td>الكوريون</td><td>يدخل الأكسجين ويحفظ السائل داخل البيضة</td></tr>
+      <tr><td>الأمنيونيات</td><td>الزواحف + الطيور + الثدييات (بيوض بغشاء أمنيوني)</td></tr>
+    </table>
+
+    <h3 class="block">📺 مقاطع البيضة والجنين — كل مقطع بطاقة مفصّلة</h3>
+    <div class="vid">
+      <div class="vid-label"><b>🥚 بيوض الزواحف (1)</b><span>شرح</span></div>
+      <video controls preload="metadata" src="2- البيضة الامنيونية/بيوض الزواحف.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> القشرة جلدية مرنة تمنع جفاف السوائل — عكس بيوض البرمائيات الهلامية الرقيقة.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🥚 بيوض الزواحف (2)</b><span>شرح</span></div>
+      <video controls preload="metadata" src="2- البيضة الامنيونية/بيوض الزواحف2.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> أين يوضع البيض؟ في حفرة بالتراب — تحمي البيضة من الحرارة والجفاف والافتراس.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🥚 بيوض الزواحف (3)</b><span>شرح</span></div>
+      <video controls preload="metadata" src="2- البيضة الامنيونية/بيوض الزواحف3.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> داخل البيضة أغشية لكل واحدة وظيفة: الأمنيون (سائل يحمي الجنين)، المحّ (غذاء)، الألانتويس (يجمّع الفضلات).</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🐣 الجنين يتحرك داخل البيضة</b><span>لحظة ممتعة</span></div>
+      <video controls preload="metadata" src="2- البيضة الامنيونية/الجنين يتحرك داخل البيضة.mp4"></video>
+      <div class="vdesc"><b>✨ اسأل:</b> وش يحيط بالجنين؟ سائل أمنيوني — الجنين يسبح في سائل يحميه من الصدمات ولا يستنزف الماء من الأم.</div>
+    </div>
+
+    <h3 class="block">🔬 مجسم مقطع البيضة (افتحه وأشر لكل غشاء بيدك)</h3>
+    <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/egg-cross-section-embryo-anatomy-00586dac878042ca954a1897f8acb2f6/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="مقطع البيضة الأمنيونية — افتح المجسم" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/egg-cross-section-embryo-anatomy-00586dac878042ca954a1897f8acb2f6" target="_blank">مقطع البيضة الأمنيونية — افتح المجسم ⤴</a>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 ============ -->
+<section class="card" id="s3">
+  <div class="sec-head"><span class="num">3</span><h2>جسم مصمَّم لليابسة</h2>
+  <p>ستة أجهزة سوّتها الزواحف عشان تعيش على اليابسة.</p></div>
+  <div class="sec-body">
+    <div class="grid3">
+      <div class="fact"><b>الجلد</b><span>حراشف تمنع فقد السوائل، وتنسلخ لتكبر</span></div>
+      <div class="fact"><b>التنفس</b><span>رئات واسعة، وشهيق بعضلات القفص الصدري</span></div>
+      <div class="fact"><b>القلب</b><span>بطين شبه مقسوم (والتمساح له 4 حجرات كاملة)</span></div>
+      <div class="fact"><b>الإخراج</b><span>حمض بوليك شبه صلب يوفّر الماء</span></div>
+      <div class="fact"><b>الحواس</b><span>بصر أقوى، وأعضاء جاكوبسون للشم — يلتقط الذرات بلسانه</span></div>
+      <div class="fact"><b>الحرارة والحركة</b><span>متغيرة الحرارة تتشمّس، وأرجل تحمل الجسم</span></div>
+    </div>
+
+    <h3 class="block">🎬 مقاطع الشرح التفصيلية</h3>
+    <div class="vid">
+      <div class="vid-label"><b>🦎 القشر (1) — الجلد والحراشف</b><span>شرح</span></div>
+      <video controls preload="metadata" src="3- جسم مصمم لليابسة/القشر.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> الحراشف طبقة قرنية تمنع فقد الماء مثل بدلة واقية من الجفاف.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🦎 القشر (2)</b><span>شرح</span></div>
+      <video controls preload="metadata" src="3- جسم مصمم لليابسة/2القشر.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> كيف يتغذّى الزاحف؟ أسنان مثبتة بالفك تمسك الفريسة وتبتلع كاملة.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🦎 القشر (3)</b><span>شرح</span></div>
+      <video controls preload="metadata" src="3- جسم مصمم لليابسة/3القشر.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> التنفس — رئات واسعة تدخلها الهواء بعضلات القفص الصدري عند الحاجة.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🦎 القشر (4)</b><span>شرح</span></div>
+      <video controls preload="metadata" src="3- جسم مصمم لليابسة/4القشر.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> الإخراج بحمض بوليك شبه صلب يوفّر الماء — الزاحف لا يخرج بولًا مائيًا مثل البرمائيات.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🫀 دورة الدم — القلب والدورة الدموية</b><span>شرح</span></div>
+      <video controls preload="metadata" src="3- جسم مصمم لليابسة/دورة الدم.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> البطين شبه المقسوم يقلّل خلط الدم المؤكسج مع غير المؤكسج — مقارنة بالبرمائيات، والتمساح اكتمل قلبه 4 حجرات.</div>
+    </div>
+
+    <h3 class="block">🧊 مجسمات لكل جهاز</h3>
+    <div class="model-row">
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/snake-shed-its-skin-9d6a0cd8444046648adcfebb60db4bb9/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="انسلاخ الأفعى (الجلد)" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/snake-shed-its-skin-9d6a0cd8444046648adcfebb60db4bb9" target="_blank">انسلاخ الأفعى (الجلد) ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/lizard-anatomy-lesson-1-body-regions-b35bcc00396a4e35acad9f9795d15b04/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="تشريح السحلية" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/lizard-anatomy-lesson-1-body-regions-b35bcc00396a4e35acad9f9795d15b04" target="_blank">تشريح السحلية ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/blunt-head-tree-snake-skull-rotation-632df3679a374699a8a92183b89d57a8/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="جمجمة أفعى الشجر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/blunt-head-tree-snake-skull-rotation-632df3679a374699a8a92183b89d57a8" target="_blank">جمجمة أفعى الشجر ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/olive-sea-snake-skull-anatomy-128a02bd59ff4f7ab567c959a5bcf3f3/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="جمجمة أفعى البحر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/olive-sea-snake-skull-anatomy-128a02bd59ff4f7ab567c959a5bcf3f3" target="_blank">جمجمة أفعى البحر ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/major-skink-skeleton-faf0580059fd425b8f30da17d71e6083/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="هيكل السقنقور" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/major-skink-skeleton-faf0580059fd425b8f30da17d71e6083" target="_blank">هيكل السقنقور ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/skull-sutures-of-adult-female-veiled-chameleon-f513475d04a94f818ded240fd5461b1f/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="جمجمة الحرباء" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/skull-sutures-of-adult-female-veiled-chameleon-f513475d04a94f818ded240fd5461b1f" target="_blank">جمجمة الحرباء ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/heloderma-v2-scan-test-dd3a441e54a44ac296f3425827416f88/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="سحلية الهيلودرما" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/heloderma-v2-scan-test-dd3a441e54a44ac296f3425827416f88" target="_blank">سحلية الهيلودرما ⤴</a>
+    </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4 ============ -->
+<section class="card" id="s4">
+  <div class="sec-head"><span class="num">4</span><h2>الرتب الأربع</h2>
+  <p>تصنيف الزواحف بعدّتها المميزة لكل رتبة.</p></div>
+  <div class="sec-body">
+    <table>
+      <tr><th>الرتبة</th><th>أمثلة</th><th>العلامة المميزة</th></tr>
+      <tr><td>الحرشفيات</td><td>الأفاعي والسحالي</td><td>الأفاعي بلا أرجل ولا جفون</td></tr>
+      <tr><td>التمساحيات</td><td>التماسيح والقواطير</td><td>قلب بأربع حجرات</td></tr>
+      <tr><td>السلحفيات</td><td>السلاحف</td><td>درع ظهري ودرع بطني</td></tr>
+      <tr><td>خطمية الرأس</td><td>التواتارا</td><td>عين ثالثة وصفّان من الأسنان</td></tr>
+    </table>
+
+    <h3 class="block">🎬 مقاطع السلحفيات والحرشفيات</h3>
+    <div class="vid">
+      <div class="vid-label"><b>🐢 القشر (5) — السلاحف والمجموعات</b><span>شرح</span></div>
+      <video controls preload="metadata" src="4- الرتب الاربع/5القشر للسلاحف.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> السلحفيات — درع عظمي يندمج مع الضلوع، وهي التصنيف الوحيد الذي بلا أسنان كاملة.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🐢 القشر (6) — السلاحف والمجموعات</b><span>شرح</span></div>
+      <video controls preload="metadata" src="4- الرتب الاربع/6القشر للسلاحف.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> السلحفاة تنسحب داخل درعها، والحرشفيات — ومنها الأفعى والسحالي — أجسامها المغطاة بحراشف قرنية.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🩻 تشريح السلاحف</b><span>شرح</span></div>
+      <video controls preload="metadata" src="4- الرتب الاربع/تشريح السلاحف.mp4"></video>
+      <div class="vdesc"><b>✂️ شاهد:</b> انظر الدرع الظهري والبطني، وكيف تلتحم أضلاع السلحفاة بالدرع، وكيف تنسحب رأسيًا وأطرافها داخل جسمها.</div>
+    </div>
+    <div class="vid">
+      <div class="vid-label"><b>🐍 شرح حياة الأفعى</b><span>شرح</span></div>
+      <video controls preload="metadata" src="4- الرتب الاربع/شرح حياة اللافعى.mp4"></video>
+      <div class="vdesc"><b>👀 لاحظ:</b> الأفعى بلا أرجل — تتحرك بانزلاقات جنبية وحركة موجية، ولسانها المشقوق يلتقط الذرات ليتتبّع فريستها وتبتلع فريسة أكبر من رأسها لأن فكيها مفككان.</div>
+    </div>
+
+    <h3 class="block">🧊 مجسم السلحفاة (قارن الدرع الظهري والبطني)</h3>
+    <div class="model-row">
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/painted-turtle-cb27ab30c4bf4a0f93c882d7e33ada81/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="السلحفاة المرسومة" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/painted-turtle-cb27ab30c4bf4a0f93c882d7e33ada81" target="_blank">السلحفاة المرسومة ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/model-46a-subadult-green-sea-turtle-79d10dc4aa45412ca40f7cf6f099230c/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="السلحفاة الخضراء البحرية" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/model-46a-subadult-green-sea-turtle-79d10dc4aa45412ca40f7cf6f099230c" target="_blank">السلحفاة الخضراء البحرية ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/attenboroughs-flat-lizard-31964ae01a5e41b88068c7ed33eaa5b0/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="سحلية أتنبره" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/attenboroughs-flat-lizard-31964ae01a5e41b88068c7ed33eaa5b0" target="_blank">سحلية أتنبره ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/gopher-tortoise-anatomy-81880d579ce84a7b823571682550f818/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="تشريح سلحفاة البر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/gopher-tortoise-anatomy-81880d579ce84a7b823571682550f818" target="_blank">تشريح سلحفاة البر ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/gopher-tortoise-skeleton-a1cf4fa5ed1e4471bcc655f34670c334/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="هيكل سلحفاة البر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/gopher-tortoise-skeleton-a1cf4fa5ed1e4471bcc655f34670c334" target="_blank">هيكل سلحفاة البر ⤴</a>
+    </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 ============ -->
+<section class="card" id="s5">
+  <div class="sec-head"><span class="num">5</span><h2>الديناصورات والبيئة</h2>
+  <p>أين انقرضت الديناصورات، وما دور الزواحف اليوم؟</p></div>
+  <div class="sec-body">
+    <div class="grid3">
+      <div class="fact"><b>انقراض الديناصورات</b><span>عاشت أكثر من 165 مليون عام، ويُعتقد أن مذنّبًا ضرب الأرض فحجب الغبار الشمس ↔ انقراض</span></div>
+      <div class="fact"><b>دور الزواحف في البيئة</b><span>فريسة ومفترس في السلاسل الغذائية، وإزالتها تخلّ بالتوازن</span></div>
+      <div class="fact"><b>أخطار عليها</b><span>فقدان الموطن والأنواع الدخيلة، كالنمس في جامايكا</span></div>
+    </div>
+
+    <h3 class="block">🔥 خاتمة مشوّقة: صغار السلاحف البحرية (السلحفيات)</h3>
+    <div class="model-row">
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/baby-green-sea-turtle-hatching-ff9d3316b5da4319bb07f3db5ccfa719/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="👶 صغير يمشي على الأرض" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/baby-green-sea-turtle-hatching-ff9d3316b5da4319bb07f3db5ccfa719" target="_blank">👶 صغير يمشي على الأرض ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/baby-green-sea-turtle-98642490cc824df6b6101c85685cd0fe/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="👶 صغير يغوص في البحر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/baby-green-sea-turtle-98642490cc824df6b6101c85685cd0fe" target="_blank">👶 صغير يغوص في البحر ⤴</a>
+    </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6 ============ -->
+<section class="card" id="s6">
+  <div class="sec-head"><span class="num">6</span><h2>نراجع ما تعلمناه</h2>
+  <p>أربعة أسئلة قلّبها مع الطلاب — اضغط على السؤال لتظهر الإجابة.</p></div>
+  <div class="sec-body">
+
+    <details class="answer"><summary>1) وش الخصائص التي مكّنت الزواحف من العيش على اليابسة؟</summary>
+    <div class="inner"><ul>
+      <li>جلد حرشفي سميك يمنع فقد الماء ويتميز بالانسلاخ.</li>
+      <li>بيضة أمنيونية بقشرة جلدية تمنع جفاف الجنين.</li>
+      <li>رئات أكثر فاعلية من البرمائيات.</li>
+      <li>إخراج حمض البوليك شبه الصلب (يوفّر الماء).</li>
+      <li>أطراف تحمل الجسم + سلوك التشمّس لتنظيم الحرارة.</li>
+    </ul></div></details>
+
+    <details class="answer"><summary>2) صِف أجزاء البيضة الأمنيونية ووظيفة كل جزء.</summary>
+    <div class="inner"><ul>
+      <li><b>القشرة الجلدية:</b> تمنع جفاف السوائل.</li>
+      <li><b>الغشاء الرهلي (الأمنيون):</b> سائل يحيط بالجنين ويحميه.</li>
+      <li><b>كيس المحّ:</b> غذاء الجنين.</li>
+      <li><b>كيس الممبار (الألانتويس):</b> يجمع الفضلات.</li>
+      <li><b>الكوريون:</b> يدخل الأكسجين ويحفظ السائل داخل البيضة.</li>
+    </ul></div></details>
+
+    <details class="answer"><summary>3) وش الفرق بين الأفاعي والسحالي؟</summary>
+    <div class="inner">كلاهما من رتبة <b>الحرشفيات</b>، لكن العلامة المميزة للأفاعي: <b>بلا أرجل وبلا جفون</b>، بينما السحالي لها أرجل وجفون متحركة (مع استثناءات كالسحالي الدودية).</div></details>
+
+    <details class="answer"><summary>4) قارن بين الحرشفيات وخطمية الرأس.</summary>
+    <div class="inner"><ul>
+      <li><b>الحرشفيات:</b> أفاعي وسحالي؛ جلد حرشفي ينسلخ، ومنها عديمة الأرجل والجفون (الأفاعي).</li>
+      <li><b>خطمية الرأس (التواتارا):</b> عين ثالثة جدارية، وصفّان من الأسنان يطبقان معًا.</li>
+    </ul></div></details>
+  </div>
+</section>
+
+<!-- ============ SECTION 7 ============ -->
+<section class="card" id="s7">
+  <div class="sec-head"><span class="num">7</span><h2>مختبر المجسمات</h2>
+  <p>افتح المجسم، دوّره بالماوس، وخلّ الطلاب يلاحظون الحراشف والهيكل والجماجم.</p></div>
+  <div class="sec-body">
+
+    <h3 class="block">🦎 المختبر الأول: السحالي</h3>
+    <div class="model-row">
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/lacerta-agilis-6b11e9d2a4124f1c8ff5b18770cf5d57/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="سحلية الرمل" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/lacerta-agilis-6b11e9d2a4124f1c8ff5b18770cf5d57" target="_blank">سحلية الرمل ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/model-12-tokay-gecko-8f19aac5694b40c3a0a53bf107fd30a4/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="وزغ التوكاي" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/model-12-tokay-gecko-8f19aac5694b40c3a0a53bf107fd30a4" target="_blank">وزغ التوكاي ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/heloderma-v2-scan-test-dd3a441e54a44ac296f3425827416f88/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="سحلية الهيلودرما" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/heloderma-v2-scan-test-dd3a441e54a44ac296f3425827416f88" target="_blank">سحلية الهيلودرما ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/attenboroughs-flat-lizard-31964ae01a5e41b88068c7ed33eaa5b0/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="سحلية أتنبره" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/attenboroughs-flat-lizard-31964ae01a5e41b88068c7ed33eaa5b0" target="_blank">سحلية أتنبره ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/lizard-anatomy-lesson-1-body-regions-b35bcc00396a4e35acad9f9795d15b04/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="تشريح السحلية" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/lizard-anatomy-lesson-1-body-regions-b35bcc00396a4e35acad9f9795d15b04" target="_blank">تشريح السحلية ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/major-skink-skeleton-faf0580059fd425b8f30da17d71e6083/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="هيكل السقنقور" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/major-skink-skeleton-faf0580059fd425b8f30da17d71e6083" target="_blank">هيكل السقنقور ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/skull-sutures-of-adult-female-veiled-chameleon-f513475d04a94f818ded240fd5461b1f/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="جمجمة الحرباء" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/skull-sutures-of-adult-female-veiled-chameleon-f513475d04a94f818ded240fd5461b1f" target="_blank">جمجمة الحرباء ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/snake-shed-its-skin-9d6a0cd8444046648adcfebb60db4bb9/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="انسلاخ الأفعى" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/snake-shed-its-skin-9d6a0cd8444046648adcfebb60db4bb9" target="_blank">انسلاخ الأفعى ⤴</a>
+    </figure>
+    </div>
+
+    <h3 class="block">🐍 المختبر الثاني: الأفاعي والسلاحف — قارن الجماجم والدروع والحركة</h3>
+    <div class="model-row">
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/coronella-austriaca-88e9389440114aa093a5a8e5dd367eeb/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="الأفعى الملساء" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/coronella-austriaca-88e9389440114aa093a5a8e5dd367eeb" target="_blank">الأفعى الملساء ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/natrix-astreptophora-49c6ee6779a4409085f00d3ae453bcba/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="أفعى الماء" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/natrix-astreptophora-49c6ee6779a4409085f00d3ae453bcba" target="_blank">أفعى الماء ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/blunt-head-tree-snake-skull-rotation-632df3679a374699a8a92183b89d57a8/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="جمجمة أفعى الشجر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/blunt-head-tree-snake-skull-rotation-632df3679a374699a8a92183b89d57a8" target="_blank">جمجمة أفعى الشجر ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/olive-sea-snake-skull-anatomy-128a02bd59ff4f7ab567c959a5bcf3f3/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="جمجمة أفعى البحر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/olive-sea-snake-skull-anatomy-128a02bd59ff4f7ab567c959a5bcf3f3" target="_blank">جمجمة أفعى البحر ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/painted-turtle-cb27ab30c4bf4a0f93c882d7e33ada81/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="السلحفاة المرسومة" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/painted-turtle-cb27ab30c4bf4a0f93c882d7e33ada81" target="_blank">السلحفاة المرسومة ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/model-46a-subadult-green-sea-turtle-79d10dc4aa45412ca40f7cf6f099230c/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="السلحفاة الخضراء البحرية" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/model-46a-subadult-green-sea-turtle-79d10dc4aa45412ca40f7cf6f099230c" target="_blank">السلحفاة الخضراء البحرية ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/gopher-tortoise-anatomy-81880d579ce84a7b823571682550f818/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="تشريح سلحفاة البر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/gopher-tortoise-anatomy-81880d579ce84a7b823571682550f818" target="_blank">تشريح سلحفاة البر ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/gopher-tortoise-skeleton-a1cf4fa5ed1e4471bcc655f34670c334/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="هيكل سلحفاة البر" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/gopher-tortoise-skeleton-a1cf4fa5ed1e4471bcc655f34670c334" target="_blank">هيكل سلحفاة البر ⤴</a>
+    </figure>
+      <figure class="model-item">
+      <iframe src="https://sketchfab.com/3d-models/baby-green-sea-turtle-hatching-ff9d3316b5da4319bb07f3db5ccfa719/embed?ui_theme=dark&ui_infos=0&ui_watermark=0&ui_controls=1&autostart=0" title="🐣 الفقس يسير على الرمل" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <a class="model" href="https://sketchfab.com/3d-models/baby-green-sea-turtle-hatching-ff9d3316b5da4319bb07f3db5ccfa719" target="_blank">🐣 الفقس يسير على الرمل ⤴</a>
+    </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section class="card" id="ref">
+  <div class="sec-head"><span class="num">8</span><h2>ملفات المرجع — PDF حسب الفكرة</h2>
+  <p>المرجع معك في وقت الشرح، والدليل التفاعلي بيسهّل عليك.</p></div>
+  <div class="sec-body">
+    <div class="model-row" style="justify-content:center;flex-wrap:wrap">
+      <a class="model" href="6- مرجع المعلم/الزواحف – رحلة التكيّف على اليابسة (1).pdf" target="_blank">📘 المرجع الأساسي — رحلة التكيف</a>
+      <a class="model" href="6- مرجع المعلم/Reptile_Anatomy_Atlas.pdf" target="_blank">🦴 أطلس التشريح</a>
+      <a class="model" href="6- مرجع المعلم/Reptile_Bioengineering.pdf" target="_blank">🧬 السياق الحيوي</a>
+      <a class="model" href="6- مرجع المعلم/1448-GE-CBM-GNRL-TRC2-SM1-BLOG2.1.pdf" target="_blank">مقرر المعلم (GE-CBM)</a>
+    </div>
+    <p class="warn">💡 نصيحة: ابدأ بالخريطة في أعلى الصفحة، ثم افتح قسمًا بقسم — فكرة ← فيديو ← مجسم ← خلّ الطالب يوصف وش شاف.</p>
+  </div>
+</section>
+
+<footer>
+  🔬 ابدأ من هنا — درس الزواحف التفاعلي • من إعداد: <b>م.أ</b> • المجسمات من Sketchfab (تحتاج إنترنت) • الفيديوهات محلية وتعمل بدون إنترنت
+</footer>
+
+</div>
+</body>
+</html>
